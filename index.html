@@ -1,11 +1,161 @@
----
-layout: default
-title: 我的Blog
----
-<h2>{{ page.title }}</h2>
-<p>最新文章</p>
-<ul>
-　　　{% for post in site.posts %}
-　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-　　　{% endfor %}
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <!-- base href="https://wuxiaoer.github.io/myblog/" -->
+  <meta charset="UTF-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <title> Personnal Blog </title>
+  <link rel="shortcut icon" href="https://cs162.eecs.berkeley.edu/static/site/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="index_files/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="index_files/metro-bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="index_files/iconFont.css">
+  <link rel="stylesheet" type="text/css" href="index_files/custom.css">
+  <script src="index_files/jquery_004.js"></script>
+  <script src="index_files/bootstrap.js"></script>
+  <script src="index_files/jquery.js"></script>
+  <script src="index_files/jquery_003.js"></script>
+  <script src="index_files/jquery_002.js"></script>
+  <script src="index_files/metro.js"></script>
+  <script src="index_files/custom.js"></script>
+</head>
+<body>
+<div class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<a href="https://cs162.eecs.berkeley.edu/" class="navbar-brand">Blog</a>
+<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="navbar-collapse collapse" id="navbar-main">
+<ul class="nav navbar-nav">
+<li><a href="https://cs162.eecs.berkeley.edu/info/"> 首页 </a></li>
+<li><a href="https://cs162.eecs.berkeley.edu/handouts/"> 笔记 </a></li>
+<li><a href="https://cs162.eecs.berkeley.edu/projects/"> 项目 </a></li>
+<li><a href="https://cs162.eecs.berkeley.edu/#weekly-schedule"> 每周计划 </a></li>
+<li><a href="https://cs162.eecs.berkeley.edu/#office-hours"> 每周完成情况 </a></li>
+<li><a href="https://cs162.eecs.berkeley.edu/staff/"> 作者简介 </a></li>
+<li><a href="https://piazza.com/berkeley/fall2015/cs162"> 论坛 </a></li>
 </ul>
+</div>
+</div>
+</div>
+<div class="container" id="main">
+  
+<div class="row">
+    <div class="col-md-2 projleft">
+        <div class="metro">
+            <nav class="sidebar light">
+                <ul>
+                    <li class="title">Contents</li>
+                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/logistics/">Android</a></li>
+                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/design/">Linux</a></li>
+                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/developmenttools/">Data Structure</a></li>
+                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/codingstandards/">Algorithm</a></li>
+                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/textbooks/">Online Textbooks</a></li>
+                    <li class="title">Pintos</li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/referenceguide/">Reference Guide</a></li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/debuggingtools/">Debugging Tools</a></li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/installingpintos/">Installing Pintos</a></li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/bibliography/">Bibliography</a></li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/license/">License</a></li>
+
+                    <li class="title"> JOS  </li>
+                    <li class="stick bg-red"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
+                    <li class="stick bg-red"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
+                    <li class="stick bg-red"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
+
+                    <li class="title"> Linux Kernel  </li>
+                    <li class="stick bg-indigo"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
+                    <li class="stick bg-indigo"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
+                    <li class="stick bg-indigo"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
+                   
+                    <li class="title"> Android </li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
+                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
+                  
+                    <li class="title"> Compiler  </li>
+                    <li class="stick bg-orange"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
+                    <li class="stick bg-orange"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
+                    <li class="stick bg-orange"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
+                   
+                    <li class="title"> Data Structure  </li>
+                    <li class="stick bg-yellow"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
+                    <li class="stick bg-yellow"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
+                    <li class="stick bg-yellow"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
+                    
+                    <li class="title"> Algorithm  </li>
+                    <li class="stick bg-violet"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
+                    <li class="stick bg-violet"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
+                    <li class="stick bg-violet"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="col-md-9 projright">
+        
+<h2> JOS </h2>
+<p>
+  The textbooks below are available as supplementary material that can help you become familiar with
+  some of the languages and tools used in this course. While using an on-campus network or VPN, you
+  can access them for free using the Safari Books links.
+</p>
+
+<!--
+<table id="textbooks">
+
+<tbody><tr>
+  <td width="125"><a href="http://proquest.safaribooksonline.com/book/databases/content-management-systems/9781449345037"><img src="index_files/cat_003.gif" alt="Git 2nd edition" height="163" width="125"></a>
+  </td>
+  <td align="center" width="330">
+    <p><a href="http://shop.oreilly.com/product/0636920022862.do">Version Control with Git<br>2nd Edition</a><br>Authors: Jon Loelinger and Matthew McCullough</p>
+    <p>Complete reference on Git. Covers almost anything you want to know about using Git.<br></p>
+  </td>
+  <td align="left" width="275"><p>O'Reilly Media, Inc.<br>2nd Edition (August 20, 2012)<br><br>
+    <strong>ISBN-13: </strong>978-1-4493-1638-9</p>
+    <p>Free On-Campus (Safari Books): <a href="http://proquest.safaribooksonline.com/book/databases/content-management-systems/9781449345037">HERE</a><br></p>
+  </td>
+</tr>
+
+<tr>
+  <td width="125"><a href="http://proquest.safaribooksonline.com/book/programming/c/9781449335649"><img src="index_files/cat.gif" alt="Head First C" height="163" width="125"></a>
+  </td>
+  <td align="center" width="330">
+    <p><a href="http://shop.oreilly.com/product/0636920015482.do">Head First C<br>1st Edition</a><br>Authors: David Griffiths and Dawn Griffiths</p>
+    <p><em>Head First C</em> provides a complete learning experience for C and structured imperative programming.<br></p>
+  </td>
+  <td align="left" width="275"><p>O'Reilly Media, Inc.<br>1st Edition (April 2012)<br><br>
+    <strong>ISBN-13: </strong>978-1-4493-9991-7</p>
+    <p>Free On-Campus (Safari Books): <a href="http://proquest.safaribooksonline.com/book/programming/c/9781449335649">HERE</a><br></p>
+  </td>
+</tr>
+
+<tr>
+  <td width="125"><a href="http://proquest.safaribooksonline.com/book/programming/c/9781491904428"><img src="index_files/cat_002.gif" alt="21st Century C" height="163" width="125"></a>
+  </td>
+  <td align="center" width="330">
+    <p><a href="http://shop.oreilly.com/product/0636920033677.do">21st Century C<br>2nd Edition</a><br>Authors: Ben Klemens</p>
+    <p>With this revised edition of <em>21st Century C</em>, you’ll 
+discover up-to-date techniques missing from other C tutorials, whether 
+you’re new to the language or just getting reacquainted.<br></p>
+  </td>
+  <td align="left" width="275"><p>O'Reilly Media, Inc.<br>2nd Edition (September 2014)<br><br>
+    <strong>ISBN-13: </strong>978-1-4919-0389-6</p>
+    <p>Free On-Campus (Safari Books): <a href="http://proquest.safaribooksonline.com/book/programming/c/9781491904428">HERE</a><br></p>
+  </td>
+</tr>
+
+</tbody></table>
+-->
+    </div>
+</div>
+
+</div>
+
+</body></html>
