@@ -1,161 +1,930 @@
-<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <!-- base href="https://wuxiaoer.github.io/myblog/" -->
-  <meta charset="UTF-8">
-  <meta http-equiv="Pragma" content="no-cache">
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-  <title> Personnal Blog </title>
-  <link rel="shortcut icon" href="https://cs162.eecs.berkeley.edu/static/site/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="index_files/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="index_files/metro-bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="index_files/iconFont.css">
-  <link rel="stylesheet" type="text/css" href="index_files/custom.css">
-  <script src="index_files/jquery_004.js"></script>
-  <script src="index_files/bootstrap.js"></script>
-  <script src="index_files/jquery.js"></script>
-  <script src="index_files/jquery_003.js"></script>
-  <script src="index_files/jquery_002.js"></script>
-  <script src="index_files/metro.js"></script>
-  <script src="index_files/custom.js"></script>
-</head>
-<body>
-<div class="navbar navbar-default navbar-fixed-top">
-<div class="container">
-<div class="navbar-header">
-<a href="https://cs162.eecs.berkeley.edu/" class="navbar-brand">Blog</a>
-<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-</div>
-<div class="navbar-collapse collapse" id="navbar-main">
-<ul class="nav navbar-nav">
-<li><a href="https://cs162.eecs.berkeley.edu/info/"> 首页 </a></li>
-<li><a href="https://cs162.eecs.berkeley.edu/handouts/"> 笔记 </a></li>
-<li><a href="https://cs162.eecs.berkeley.edu/projects/"> 项目 </a></li>
-<li><a href="https://cs162.eecs.berkeley.edu/#weekly-schedule"> 每周计划 </a></li>
-<li><a href="https://cs162.eecs.berkeley.edu/#office-hours"> 每周完成情况 </a></li>
-<li><a href="https://cs162.eecs.berkeley.edu/staff/"> 作者简介 </a></li>
-<li><a href="https://piazza.com/berkeley/fall2015/cs162"> 论坛 </a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="container" id="main">
-  
-<div class="row">
-    <div class="col-md-2 projleft">
-        <div class="metro">
-            <nav class="sidebar light">
-                <ul>
-                    <li class="title">Contents</li>
-                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/logistics/">Android</a></li>
-                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/design/">Linux</a></li>
-                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/developmenttools/">Data Structure</a></li>
-                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/codingstandards/">Algorithm</a></li>
-                    <li class="stick bg-blue"><a href="https://cs162.eecs.berkeley.edu/projects/general/textbooks/">Online Textbooks</a></li>
-                    <li class="title">Pintos</li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/referenceguide/">Reference Guide</a></li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/debuggingtools/">Debugging Tools</a></li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/installingpintos/">Installing Pintos</a></li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/bibliography/">Bibliography</a></li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/license/">License</a></li>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="keywords" content="朝夕黎晨,阚登峰,江夕晨,系统下载,软件下载,技术交流,改造">
+        <meta name="description" content="小晨晨个人网站，毕竟是文理双修的奇葩，琴棋书画无所不通，电脑手机硬件无所不能，爱折腾，爱钻研，又安静又热血，哈哈哈！！！">
+		<title>朝夕黎晨</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link rel="shortcut icon" href="images/favicon.ico">
+        <link rel="Bookmark" href="images/favicon.ico">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/zerogrid.css" >
+		<link rel="stylesheet" href="css/camera.css">
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/jquery-migrate-1.1.1.js"></script>
+		<script src="js/jquery.equalheights.js"></script>
+		<script src="js/tms-0.4.1.js"></script>
+        <script>
+          (function(){
+           var bp = document.createElement('script');
+           bp.src = '//push.zhanzhang.baidu.com/push.js';
+           var s = document.getElementsByTagName("script")[0];
+           s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+        <script>
+			$(document).ready(function(){//首页的文字切换
+				$('.slider_wrapper')._TMS({
+					show:0,
+					pauseOnHover:false,
+					prevBu:'.prev',
+					nextBu:'.next',
+					playBu:false,
+					duration:800,
+					preset:'fade',
+					pagination:true,//'.pagination',true,'<ul></ul>'
+					pagNums:false,
+					slideshow:3000,
+					numStatus:false,
+					banners: 'fade',
+					waitBannerAnimation:false,
+					progressBar:false
+				});
+			});
+			$(document).ready(function(){//顶部颜色随页面变换
+				!function(){
+			var map=[]
+			 ,names=[]
+			 ,win=$(window)
+			 ,header=$('header')
+			 ,currClass
+			$('.content').each(function(n){
+			 map[n]=this.offsetTop
+			 names[n]=$(this).attr('id')
+			})
+			win
+			 .on('scroll',function(){
+				var i=0
+				while(map[i++]<=win.scrollTop());
+				if(currClass!==names[i-2])
+				currClass=names[i-2]
+				header.removeAttr("class").addClass(names[i-2])
+			 })
+			}(); });
+					function goToByScroll(id){//菜单栏切换
+				$('html,body').animate({scrollTop: $("#"+id).offset().top},'slow');
+				}
+				$(document).ready(function(){//滚动回顶部
+					$().UItoTop({ easingType: 'easeOutQuart' });
+				});
+		</script>
+		<!--[if lt IE 8]>
+			<div style=' clear: both; text-align:center; position: relative;'>
+				<a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+					<img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+				</a>
+			</div>
+		<![endif]-->
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+			<link rel="stylesheet" media="screen" href="css/ie.css">
+		<![endif]-->
+	</head>
+	<body class=""> 
+      <div class="tc1"> 
+        <div class="tcnr"> 
+        <table  border="0" cellspacing="0" cellpadding="0" align="center">
+         <caption style="font-size:20px">
+    <div style="float:left">Microsoft Visual C++下载</div>
+    <div class="close" style="float:right">
+     <a style="cursor:pointer" onclick="jQuery('.tc1').hide()"><img src="images/close.png" alt=""/></a></div>
+  </caption>
+  <tbody>
+    <tr bgcolor="#CFA1D5">
+      <td width="340px">Microsoft Visual C++ 2005</td>
+      <td width="80px"><a href="http://download.microsoft.com/download/5/2/1/5212066c-5f48-4b16-a059-ed84b505a65d/vcredist_x86.exe" target="_blank">x86版本</a></td>
+      <td width="80px"><a href="http://download.microsoft.com/download/4/4/e/44e0443c-e560-48db-b817-f5c94036a89f/vcredist_x64.exe" target="_blank">x64版本</a></td>
+    </tr>
+    <tr>
+      <td >Microsoft Visual C++ 2005 SP1</td>
+      <td><a href="http://download.microsoft.com/download/7/9/8/798325b7-8993-4ef9-9148-8db9ff4187fc/vcredist_x86.exe" target="_blank">x86版本</a></td>
+      <td><a href="http://download.microsoft.com/download/7/5/2/7521765a-7b4f-4656-a439-dd0de12b35ea/vcredist_x64.exe" target="_blank">x64版本</a></td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td >Microsoft Visual C++ 2008</td>
+      <td><a href="http://download.microsoft.com/download/7/5/0/7502f4e9-1f90-4895-9259-1bde67b8b9a1/vcredist_x86.exe" target="_blank">x86版本</a></td>
+      <td><a href="http://download.microsoft.com/download/2/b/e/2bec4780-6f99-4347-ad31-48d4b46ab1d3/vcredist_x64.exe" target="_blank">x64版本</a></td>
+    </tr>
+    <tr>
+      <td >Microsoft Visual C++ 2008 SP1</td>
+      <td><a href="http://download.microsoft.com/download/5/9/e/59e74271-2b59-49a1-b955-96b69cc34f38/vcredist_x86.exe" target="_blank">x86版本</a></td>
+      <td><a href="http://download.microsoft.com/download/b/d/e/bde0381b-20e2-4631-a5f4-aa72111a23d8/vcredist_x64.exe" target="_blank">x64版本</a></td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td >Microsoft Visual C++ 2010</td>
+      <td><a href="http://download.microsoft.com/download/5/B/C/5BC5DBB3-652D-4DCE-B14A-475AB85EEF6E/vcredist_x86.exe" target="_blank">x86版本</a></td>
+      <td><a href="http://download.microsoft.com/download/3/2/2/3224B87F-CFA0-4E70-BDA3-3DE650EFEBA5/vcredist_x64.exe" target="_blank">x64版本</a></td>
+    </tr>
+    <tr>
+      <td>Microsoft Visual C++ 2010 SP1</td>
+      <td><a href="http://download.microsoft.com/download/C/6/D/C6D0FD4E-9E53-4897-9B91-836EBA2AACD3/vcredist_x86.exe" target="_blank">x86版本</a></td>
+      <td><a href="http://download.microsoft.com/download/A/8/0/A80747C3-41BD-45DF-B505-E9710D2744E0/vcredist_x64.exe" target="_blank">x64版本</a></td>
 
-                    <li class="title"> JOS  </li>
-                    <li class="stick bg-red"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
-                    <li class="stick bg-red"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
-                    <li class="stick bg-red"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
-
-                    <li class="title"> Linux Kernel  </li>
-                    <li class="stick bg-indigo"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
-                    <li class="stick bg-indigo"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
-                    <li class="stick bg-indigo"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
-                   
-                    <li class="title"> Android </li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
-                    <li class="stick bg-green"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
-                  
-                    <li class="title"> Compiler  </li>
-                    <li class="stick bg-orange"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
-                    <li class="stick bg-orange"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
-                    <li class="stick bg-orange"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
-                   
-                    <li class="title"> Data Structure  </li>
-                    <li class="stick bg-yellow"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
-                    <li class="stick bg-yellow"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
-                    <li class="stick bg-yellow"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
-                    
-                    <li class="title"> Algorithm  </li>
-                    <li class="stick bg-violet"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Introduction</a></li>
-                    <li class="stick bg-violet"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Reference Book</a></li>
-                    <li class="stick bg-violet"><a href="https://cs162.eecs.berkeley.edu/projects/pintos/introduction/">Develop Tools</a></li>
-
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <div class="col-md-9 projright">
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>Microsoft Visual C++ 2012 Update1</td>
+      <td><a href="http://download.microsoft.com/download/9/C/D/9CD480DC-0301-41B0-AAAB-FE9AC1F60237/VSU1/vcredist_x86.exe" target="_blank">x86版本</a></td>
+      <td><a href="http://download.microsoft.com/download/9/C/D/9CD480DC-0301-41B0-AAAB-FE9AC1F60237/VSU1/vcredist_x64.exe" target="_blank">x64版本</a></td>
+    </tr>
+    <tr>
+      <td >Microsoft Visual C++ 2013</td>
+      <td><a href="http://download.microsoft.com/download/F/3/5/F3500770-8A08-488E-94B6-17A1E1DD526F/vcredist_x86.exe" target="_blank">x86版本</a></td>
+      <td><a href="http://download.microsoft.com/download/F/3/5/F3500770-8A08-488E-94B6-17A1E1DD526F/vcredist_x64.exe" target="_blank">x64版本</a></td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td >Microsoft Visual C++ 2015</td>
+      <td><a href="http://download.microsoft.com/download/9/E/1/9E1FA77A-9E95-4F3D-8BE1-4D2D0C947BA2/enu_INREL/vcredistd14x86/vc_redist.x86.exe" target="_blank">x86版本</a></td>
+      <td><a href="http://download.microsoft.com/download/9/E/1/9E1FA77A-9E95-4F3D-8BE1-4D2D0C947BA2/enu_INREL/vcredistd14x64/vc_redist.x64.exe" target="_blank">x64版本</a></td>
+    </tr>
+  </tbody>
+</table></div></div>
         
-<h2> JOS </h2>
-<p>
-  The textbooks below are available as supplementary material that can help you become familiar with
-  some of the languages and tools used in this course. While using an on-campus network or VPN, you
-  can access them for free using the Safari Books links.
-</p>
+      <div class="tc2"> 
+        <div class="tcnr"> 
+        <table  border="0" cellspacing="0" cellpadding="0" align="center">
+        <caption style="font-size:20px">
+    <div style="display:inline-block;float:left">.NET Framework下载</div>
+    <div class="close" style="display:inline-block;float:right">
+     <a style="cursor:pointer" onclick="jQuery('.tc2').hide()"><img src="images/close.png" alt=""/></a></div>
+  </caption>
+      <tbody>
+    <tr bgcolor="#CFA1D5">
+      <td width="380px">Microsoft .NET Framework 3.5 SP1</td>
+      <td width="120px"><a href="http://download.microsoft.com/download/2/0/E/20E90413-712F-438C-988E-FDAA79A8AC3D/dotnetfx35.exe" target="_blank">完整版</a></td>
+    </tr>
+    <tr>
+      <td>Microsoft .NET Framework 4</td>
+      <td><a href="https://download.microsoft.com/download/9/5/A/95A9616B-7A37-4AF6-BC36-D6EA96C8DAAE/dotNetFx40_Full_x86_x64.exe" target="_blank">完整版</a></td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>Microsoft .NET Framework 4.5</td>
+      <td><a href="http://download.microsoft.com/download/b/a/4/ba4a7e71-2906-4b2d-a0e1-80cf16844f5f/dotnetfx45_full_x86_x64.exe" target="_blank">完整版</a></td>
+    </tr>
+    <tr>
+      <td>Microsoft .NET Framework 4.5.1</td>
+      <td><a href="http://download.microsoft.com/download/1/6/7/167F0D79-9317-48AE-AEDB-17120579F8E2/NDP451-KB2858728-x86-x64-AllOS-ENU.exe" target="_blank">完整版</a></td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>Microsoft .NET Framework 4.5.2</td>
+      <td><a href="https://download.microsoft.com/download/E/2/1/E21644B5-2DF2-47C2-91BD-63C560427900/NDP452-KB2901907-x86-x64-AllOS-ENU.exe">完整版</a></td>
+    </tr>
+    <tr>
+      <td>Microsoft .NET Framework 4.6</td>
+      <td><a href="http://download.microsoft.com/download/C/3/A/C3A5200B-D33C-47E9-9D70-2F7C65DAAD94/NDP46-KB3045557-x86-x64-AllOS-ENU.exe">完整版</a></td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>Microsoft .NET Framework 4.6.1</td>
+      <td><a href="http://download.microsoft.com/download/E/4/1/E4173890-A24A-4936-9FC9-AF930FE3FA40/NDP461-KB3102436-x86-x64-AllOS-ENU.exe">完整版</a></td>
+    </tr>
+ </tbody>
+</table></div></div>
+        
+      <div class="tc3"> 
+        <div class="tcnr">
+        <table border="0" cellspacing="0" cellpadding="0" align="center">
+  <caption style="font-size:20px">
+    <div style="display:inline-block;float:left">本人ios7.1.2设备</div>
+    <div class="close" style="display:inline-block;float:right">
+     <a style="cursor:pointer" onclick="jQuery('.tc3').hide()"><img src="images/close.png" alt=""/></a></div>
+  </caption>
+  <tbody>
+    <tr bgcolor="#CFA1D5">
+      <td>将其他照片弄到手机相机胶卷</td>
+    </tr>
+    <tr>
+      <td>/DCIM/100APPLE  再到/PhotoData下删除Photos.sqlite然后重启</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>开机logo更换目录</td>
+    </tr>
+    <tr>
+      <td>/System/Library/PrivateFrameworks/ProgressUI.framework里png文件，有黑白之分</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>一些文字，如滑动解锁文字，关机，充电文字等等</td>
+    </tr>
+    <tr>
+      <td>/System/Library/CoreServices/SpringBoard.app/zh_CN.lproj（里面SpringBoard.strings）</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>改网络2g，3g，4g文字等</td>
+    </tr>
+    <tr>
+      <td>/System/Library/Frameworks/UIKit.framework/zh_CN.lproj（里面Localizable.strings）</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>IOS7 字体路径：（提前备份好原字体）</td>
+    </tr>
+    <tr>
+      <td>/System/Library/Fonts/Cache/</td>
+    </tr>
+  </tbody>
+</table></div></div>
+        
+      <div class="tc4"> 
+        <div class="tcnr">
+          <table  border="0" cellspacing="0" cellpadding="0" style="height:97%">
+  <caption style="font-size:20px">
+    <div style="display:inline-block;float:left">本人ios7.1.2设备 不越狱不自由</div>
+    <div class="close" style="display:inline-block;float:right">
+        <a style="cursor:pointer" onclick="jQuery('.tc4').hide()"><img src="images/close.png" alt=""/></a></div>
+  </caption>
+      <tbody>
+    <tr bgcolor="#CFA1D5">
+      <td>Apple file conduit 2</td>
+      <td>电脑usb管理手机里文件</td>
+    </tr>
+    <tr>
+      <td>activator</td>
+      <td>强大的手势插件</td>
+    </tr>
+   <tr bgcolor="#CFA1D5">
+      <td>auxo2</td>
+      <td>将控制中心和后台管理合并美化插件</td>
+    </tr>
+    <tr>
+      <td>auki</td>
+      <td>短信功能增强（支持快捷回复与编写）</td>
+    </tr>  
+    <tr bgcolor="#CFA1D5">
+      <td>BetterWiFi7</td>
+      <td>强化Wi-Fi连接功能</td>
+    </tr>
+    <tr>
+      <td>background manger</td>
+      <td>对程序后台自定义</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>cameratweak2 </td>
+      <td>增强相机功能</td>
+    </tr>
+    <tr>
+      <td>camrix</td>
+      <td>手势快捷照相</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>ccsettings</td>
+      <td>控制中心插件，自定义快捷开关</td>
+    </tr>
+    <tr>
+      <td>callbar</td>
+      <td>来电在状态栏提示不，会打断目前操作，可替换系统电话</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>clearlocknotifications</td>
+      <td>一键清理通知中心的通知</td>
+    </tr>
+    <tr>
+      <td>clex</td>
+      <td>快捷音乐控制（仅仅适用于自带音乐软件）</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>Chinese calendar pro for ios 7</td>
+      <td>中国日历，在下拉栏今天显示中国日历</td>
+    </tr>
+    <tr>
+      <td>colorBadges</td>
+      <td>角标颜色随程序颜色变换</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>Datameter</td>
+      <td>流量统计、悬浮窗口显示网速</td>
+    </tr>
+    <tr>
+      <td>Eclipse</td>
+      <td>ios7的UI进入夜间模式</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>flex2 </td>
+      <td>app自定义破解</td>
+    </tr>
+    <tr>
+      <td>Foldercloser</td>
+      <td>打开文件夹再打开app后文件夹自动关闭 </td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>gifviewer</td>
+      <td>相册能看gif，能保存gif图</td>
+    </tr>
+    <tr>
+      <td>homescreendesigner</td>
+      <td>桌面布局随意自定义</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>kuaidial for ios7</td>
+      <td>来电显示（可自定义更新数据库）</td>
+    </tr>
+    <tr>
+      <td>localiapstore</td>
+      <td>破解收费项目的（什么道具啊都ok了，用于单机）</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>lockhtml3 </td>
+      <td>修改锁屏的美化插件</td>
+    </tr>
+    <tr>
+      <td>idelephoto</td>
+      <td>能在手机上删除电脑导入的图片</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>icleaner pro</td>
+      <td>ios清理工具</td>
+    </tr>
+    <tr>
+      <td>ifile</td>
+      <td>强大的文件管理器</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>paperboard</td>
+      <td>自定义设置任何app的背景</td>
+    </tr>
+    <tr>
+      <td>snapper</td>
+      <td>快捷自定范围义截图</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>springtomize 3</td>
+      <td>桌面美化如运营商自定义，dock透明、图标透明等</td>
+    </tr>
+    <tr>
+      <td>TransparentCameraBar</td>
+      <td>让自带相机的顶部和底部透明</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>tinybar</td>
+      <td>更改通知提醒框样式大小等</td>
+    </tr>
+    <tr>
+      <td>tinygrid+</td>
+      <td>改变文件夹样式</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>winterboard</td>
+      <td>主题，图标、界面等等美化神器</td>
+    </tr>
+    <tr>
+      <td>videopane</td>
+      <td>视频播放窗口化</td>
+    </tr>
+    <tr bgcolor="#CFA1D5">
+      <td>ilex rat</td>
+      <td>帮助你删除所有插件或恢复出厂（保留越狱状态）</td>
+    </tr>
+    <tr>
+      <td>八门神器</td>
+      <td>这个就是神器了</td>
+    </tr>
+ </tbody>
+</table></div></div>
+<!--==============================header=================================-->
+		<header class="page1" id="first">
+            <div class="musictime"></div>
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="menu_block">
+							<nav class="">
+								<ul class="sf-menu">
+									<li class="current men"><a onClick="goToByScroll('page1'); return false;" href="#">是我 </a> <strong class="hover"></strong></li>
+									<li class="men1"><a onClick="goToByScroll('page2'); return false;" href="#">习文</a><strong class="hover"></strong></li>
+									<li class=" men2"><a onClick="goToByScroll('page3'); return false;" href="#">克武</a> <strong class="hover"></strong></li>
+									<li class=" men3"><a onClick="goToByScroll('page4'); return false;" href="#">追逐</a> <strong class="hover"></strong></li>
+									<li class=" men4"><a onClick="goToByScroll('page5'); return false;" href="#">云霄</a> <strong class="hover"></strong></li>
+								</ul>
+							</nav>
+							<div class="clear"></div>
+						</div>
+                        <div class="logo">
+						<img src="images/logo.png" width="108" alt="">
+                        <a id="audio_btn" title="" style="cursor:pointer">
+                        <img id="music_btn" class="music" src="images/play.png" alt=""></a>
+                        <audio id="bgmusic" src="" autoplay></audio>
+                        <script>
+						    
+                            var music = document.getElementById("bgmusic");
+							var musicArr=[
+			{url:'http://sc.111ttt.com/up/mp3/24879/3A4195CA56CEB2EFDDD758F6BC43A09E.mp3',title:"阿桑-叶子"},
+			{url:'http://sc.111ttt.com/up/mp3/144358/98772826A6939B264E4830DFC8FA4CC6.mp3',title:"刘若英-后来"},
+			{url:'http://sc.111ttt.com/up/mp3/183368/F4E279474B8C34756C4658C291EB8051.mp3',title:"梁静茹-爱久见人心"},
+			{url:'http://sc.111ttt.com/up/mp3/145907/2C9143D6EFFB928D3D23791465D9EB7C.mp3',title:"梁静茹-失忆"},
+			{url:'http://sc.111ttt.com/up/mp3/209258/AA0D2618554E13E2DA075477121ADF12.mp3',title:"丁当-我爱他"},
+			{url:'http://sc.111ttt.com/up/mp3/342919/0CB3C2F687ED515E2B2B1C96A9A80D2C.mp3',title:"丁当-飘洋过海来看你"},
+			{url:'http://sc1.111ttt.com/2015/1/02/02/95021850221.mp3',title:"Aki阿杰-牵丝戏"},
+			{url:'http://www.xuenb.com/tools/mp3/c104907046.mp3',title:"邓紫棋-盲点"},
+			{url:'http://sc.111ttt.com/up/mp3/9081/2E71C21741238686C25D5B9284C4D6B1.mp3',title:"邓紫棋-泡沫"},
+			{url:'http://sc.111ttt.com/up/mp3/1420/D4AAB2EB9BD015F6C833963CA2DDC771.mp3',title:"光亮-童话"},
+			{url:'http://sc.111ttt.com/up/mp3/239744/4C7D0A45D85B1A04FDEE132B1D47292B.mp3',title:"周杰伦-不能说的秘密"},
+			{url:'http://sc.111ttt.com/up/mp3/131963/51272673D0DF0FC7B7CB41F8118004BF.mp3',title:"五月天-突然好想你"},
+			{url:'http://sc.111ttt.com/up/mp3/92402/2C197E6DF5CE6F18EAE9988E2510076E.mp3',title:"五月天-温柔"},
+			{url:'http://sc.111ttt.com/up/mp3/154563/26511C004C12BC30B586F78C5892310B.mp3',title:"陈奕迅-红玫瑰"},
+			{url:'http://sc.111ttt.com/up/mp3/225634/318E1367B5A181BC82E5CEC16F00F8C1.mp3',title:"陈奕迅-爱情转移"},
+			{url:'http://sc.111ttt.com/up/mp3/37116/B54250A24AFF41F939C3EB14CCB3956A.mp3',title:"林俊杰-美人鱼"},
+			{url:'http://sc.111ttt.com/up/mp3/81509/4978E4B8B403D05A2460ABF8FD707C1D.mp3',title:"林俊杰-她说"},
+			{url:'http://sc.111ttt.com/up/mp3/136112/BD9F9BBA1E51B43A2EF97A1E810AB098.mp3',title:"王力宏-心跳"},
+			{url:'http://sc.111ttt.com/up/mp3/3417/15E9D6FD0730BAA98FB0EA783EFC5D4A.mp3',title:"陈韵若-爱的回归线"},
+			{url:'http://sc.111ttt.com/up/mp3/1447/601B398AAAA6E306B827F84DA26AC07B.mp3',title:"水晶蝶-情动"},
+			{url:'http://sc1.111ttt.com/2015/1/04/09/97092246567.mp3',title:"Wiz Khalifa-See You Again"},
+			{url:'http://sc.111ttt.com/up/mp3/238519/65FD84525EFE5C1E55560DA67BCC049A.mp3',title:"Declan Galbraith-An Angel"},
+			{url:'http://sc.111ttt.com/up/mp3/5701/B18EE9415CCE21BC289A392721941638.mp3',title:"Shayne Ward-Until You"},
+			{url:'http://sc.111ttt.com/up/mp3/407629/CE58A56F31D2A48E1B3A19775EF8D37F.mp3',title:"Backstreet Boys-as long as you love me"},
+			{url:'http://sc.111ttt.com/up/mp3/285804/CA9A812C1747BE0FB767D6A0352ECCF6.mp3',title:"Flower-太陽と向日葵"},
+			{url:'http://sc.111ttt.com/up/mp3/398451/5657AA59462D4D1C32C1CCB37348C3DE.mp3',title:"vienna-Not a Sad Song"},
+			{url:'http://sc.111ttt.com/up/mp3/99948/5F60F0771B548D5F6F797368512E313A.mp3',title:"Justin Timberlake-Mirrors"},
+			{url:'http://sc.111ttt.com/up/mp3/2717/FD66DE08830CA1AA710443582BB7CDE6.mp3',title:"Matt Pokora-Juste une photo de toi"},
+			{url:'http://sc.111ttt.com/up/mp3/319695/C613EC37ABBD8657672C3AA30E657C6E.mp3',title:"ZONE-secret base ~君がくれたもの~"},
+							 ];
+							 var mn=musicArr[parseInt(Math.random()*musicArr.length)];
+							 $("#bgmusic").attr('src',mn.url);
+						     $("#audio_btn").attr('title',mn.title);
+							 $("#audio_btn").click(function(){
+							 if(music.paused){     
+                                  music.play();     
+                                  $("#music_btn").attr("src","images/play.png");     
+                                   }else{     
+                                  music.pause();     
+                                  $("#music_btn").attr("src","images/pause.png");     
+                                 }     
+                              });
+							 $("#bgmusic").on('ended',function(){
+	                           var n=$("#bgmusic").attr('src');
+	                           var m=musicArr[parseInt(Math.random()*musicArr.length)];
+	                           if (m==n){var m=musicArr[parseInt(Math.random()*musicArr.length)];}
+	                            $("#bgmusic").attr('src',m.url);
+								$("#audio_btn").attr('title',m.title);
+                                });
+							var w = document.getElementById("first").offsetWidth;
+							var ProcessNow = 0;
+                             setInterval(function () {
+          				     var ProcessNow = (bgmusic.currentTime / bgmusic.duration) * w;
+          				     $(".musictime").css("width", ProcessNow);}, 1);  
+                             </script> 
+                         </div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+<div class="copyrights">进入<a href="#" >朝夕黎晨</a></div>
+<!--=======content================================-->
+		<div id="page1" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slider_wrapper">
+                        <div class="face">
+                          <img id="tx" src="images/男.png" height="320px" alt="">
+                          </div>
+                          <script>
+						    var date=new Date();
+							var hour=date.getHours(); 
+							if(6<=hour&&hour<23){
+								 document.getElementById("tx").src="images/男.png";   
+								 }else{
+								 document.getElementById("tx").src="images/女.png";
+								 }
+						  </script>   
+                          <div class="love">
+							<ul class="items">
+								<li>
+								    <img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										 
+                                        <h2>
+                                        <p>红尘三千墨</p>
+                                        <p>不及你</p>
+                                        <p>一刻笑倾城</p></h2>
+                                      
+									</div>
+								</li>
+                                <li>
+									<img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										
+                                        <h2>
+                                        <p>思念已泛滥成灾</p>
+                                        <p>而我</p>
+                                        <p>惊慌失措</p></h2>
+                                       
+									</div>
+								</li>
+								<li>
+									<img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										
+                                        <h2>
+                                        <p>如果再也见不到你</p>
+                                        <p>祝你</p>
+                                        <p>早安、午安、晚安</p></h2>
+                                      
+									</div>
+								</li>
+								<li>
+									<img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										
+                                        <h2>
+                                        <p>愿执子之手</p>
+                                        <p>指触芳华韵彩</p>
+                                        <p>情点琉璃涟漪</p></h2>
+                                       
+									</div>
+								</li>
+								<li>
+									<img src="images/spacer.gif" alt="">
+									<div class="caption banner">
+										
+                                        <h2>
+                                        <p>一句无心无意</p>
+                                        <p>七年守候</p>
+                                        <p>半盏年华</p></h2>
+                                       
+									</div>
+								</li>
+							</ul>
+                            </div>
+						</div>
+						<div class="socials">
+							<a href="http://weibo.com/3140872451/profile" target="_blank"></a>
+							<a href="https://shop144986938.taobao.com/" target="_blank"></a>
+							<a href="http://www.baidu.com/p/风尘樱" target="_blank"></a>
+							<a href="http://pan.baidu.com/share/home?uk=2887363588" target="_blank"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+   
+		<div id="page2" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slogan">
+							<h3>我就是文理双修的奇葩存在</h3>
+							<div class="text1" style="width:100%">
+							扣一曲年华歌谣，唱冷了昨日记号。再不能看清曾经的脚印，也不能望穿来时的始初。唯记忆的风帆，麻木寻找被涂改的路线，不知该如何才能找到一处歇脚之地靠岸。那长长的经年凤歌，又该怎样唱美岁月的婆娑。
+							</div>
+                            <div style="padding-top:20px">
+                            <div class="weibo">
+                            <iframe width="95%" height="800" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=800&fansRow=1&ptype=1&speed=0&skin=9&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=3140872451&verifier=8c0ba972&colors=f17c72,f17c72,ffffff,ffffff,f17c72&dpc=1"></iframe>
+                            </div>
+                            <div class="myword" style="overflow:auto">
+                            <h4 style="padding-top:15px">留给自己的梦</h4><br/>
+                            1、完美的爱情（还在努力中）<br/>
+                            2、做自己喜欢的事（努力中）<br/>
+                            3、全面设计自己的家（还没买房）<br/>
+                            4、环游中国 and 环游世界（中国游ing）<br/>
+                            5、一直乐于助人，真诚待人（未曾食言）<br/>
+                            6、拥有自己的蛋糕咖啡店（未完成）<br/>
+                            7、重新拾回钢琴（未完成）<br/>
+                            8、拥有自己的马（未完成）<br/>
+                            9、每天锻炼身体，做运动（进行中）<br/>
+                            10、每月书籍至少2本（进行中）<br/>
+                            <h4 style="padding-top:20px">留给自己的话</h4><br/>
+                            1、有时候人言可畏，堪比最狠的武器，切记<br/>
+                            2、年轻的时候的初心最重要也最真诚，不要遗忘<br/>
+                            3、喜欢就去努力吧，尽管努力不一定成功<br/>
+                            4、多反省自己，知道自己过错与感谢别人<br/>
+                            5、面对总比逃避强，真诚总比欺骗好<br/>
+                            6、一件事看重结果，更看重过程<br/>
+                            7、乐于助人总是好的，收获肯定比付出多<br/>
+                            8、连基本道德都没有的人，就没必要客气<br/>
+                            9、原谅比报复更加来之不易，但有的人不能原谅<br/>
+                            10、朋友，允许原谅你一次，有且只有一次<br/>
+                            <h4 style="padding-top:20px">留给自己的书</h4><br/>
+                            读安妮宝贝《蔷薇岛屿》ing。。。<br/>
+                            陈蔚文《未有期》
+                            </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight">
+                        <div class="text1">朝</div>
+							<br/>不知什么时候开始，在什么东西上面都有个日期，秋刀鱼会过期，肉罐头会过期，连保鲜纸都会过期，我开始怀疑，在这个世界上，还有什么东西是不会过期的
+                            <p>&emsp;&emsp;&emsp;——《重庆森林》</p>
+                            爱一个女孩子，与其为她的幸福而放弃她，不如留住她，为她的幸福而努力。
+                            <p>&emsp;&emsp;&emsp;——《水晶之恋》</p>
+                            <div class="socials1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight">
+                        <div class="text1">夕</div>
+							<br/>人生下来的时候都只有一半，为了找到另一半而在人世间行走。有的人幸运，很快就找到了。而有人却要找一辈子
+                            <p>&emsp;&emsp;&emsp;——《玻璃樽》</p>
+                            小时候，看着满天的星斗，当流星飞过的时候，却总是来不及许愿，长大了，遇见了自己真正喜欢的人，却还是来不及。
+                            <p>&emsp;&emsp;&emsp;——《停不了的爱》</p>
+                             <div class="socials1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight">
+                        <div class="text1">黎</div>
+							 <br/>对中年以后的人来讲，十年八年好像是指缝间的事，可是对年轻人来说，三年五年就可以是一生一世。
+                             <p>&emsp;&emsp;&emsp;——《半生缘》</p>
+                             为了记住你的笑容，我拼命按下心中的快门。
+                             <p>&emsp;&emsp;&emsp;——《美丽人生》</p>
+                             然我不介意牺牲自己的感情，但是我真的很介意牺牲你。
+                             <p>&emsp;&emsp;&emsp;——《流金岁月》</p>
+                              <div class="socials1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight">
+                        <div class="text1">晨</div>
+							<br/>现在很清楚，我向你走去，你向我走来已经很久很久了。虽然在我们相会之前谁也不知道对方的存在。
+                            <p>&emsp;&emsp;&emsp;——《廊桥遗梦》</p>
+                            谁会了解，生命中的过客竟会让我如此感动，感谢你给我带来的一切。
+                            <p>&emsp;&emsp;&emsp;——《再说一次我爱你》</p>
+                            如果你不出去走走，你就会以为这就是世界。
+                            <p>&emsp;&emsp;&emsp;——《天堂电影院》</p>
+                             <div class="socials1"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-<!--
-<table id="textbooks">
+		<div id="page3" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slogan">
+							<h3>一些PC类下载</h3>
+                            <p>打开下载器，点击名字即可下载！鼠标悬停有SHA1值！下载好请校验SHA1的值确认文件无损坏！</p>
+                            <div class="down">
+							<div class="xt">
+                                <p><a href="http://pan.baidu.com/s/1B3HUm" alt="sha1" title="SHA1：7159C294F7DDD0F4514FDF62CE5945C6135C71FB" target="_blank">Windows 10 自制预览版11102简体中文版</a></p>
+                                <p><a href="ed2k://|file|cn_windows_10_multiple_editions_version_1511_x86_dvd_7223635.iso|3175995392|55D8EF251EEF617DE4D69B54E17B3625|/" alt="sha1" title="SHA1：B521719BAEE84772363B2EF52339DEFAD1FFCEBB">Windows 10 TH2 32位简体中文版（家庭/专业版）</a></p>
+                                <p><a href="ed2k://|file|cn_windows_10_multiple_editions_version_1511_x64_dvd_7223622.iso|4187224064|FE3F221D193FEF02627F7F8CF0041BB3|/" alt="sha1" title="SHA1：9B71AD5604B3816BCC7E9AFA3052AE7D823163E8">Windows 10 TH2 64位简体中文版（家庭/专业版）</a></p>
+                                <p><a href="ed2k://|file|cn_windows_8.1_professional_vl_with_update_x86_dvd_4048630.iso|3086659584|41CAAB5DAC5643F6E0048576D609C19A|/" alt="sha1" title="SHA1：FECD698316EB602A566FCF7F1F2172BFF9BC7713">Windows 8.1 with Update 32位简体中文专业版</a></p>
+                                <p><a href="ed2k://|file|cn_windows_8.1_professional_vl_with_update_x64_dvd_4050293.iso|4136626176|4D2363F9E06BFD50A78B1E6464702959|/" alt="sha1" title="SHA1：BD1B866707D07C6A460E6AD6E1124782F16ABC60">Windows 8.1 with Update 64位简体中文专业版</a></p>
+                                <p><a href="ed2k://|file|cn_windows_7_ultimate_with_sp1_x86_dvd_u_677486.iso|2653276160|7503E4B9B8738DFCB95872445C72AEFB|/" alt="sha1" title="SHA1: B92119F5B732ECE1C0850EDA30134536E18CCCE7">Windows 7 With SP1 32位简体中文旗舰版</a></p>
+                                <p><a href="ed2k://|file|cn_windows_7_ultimate_with_sp1_x64_dvd_u_677408.iso|3420557312|B58548681854236C7939003B583A8078|/" alt="sha1" title="SHA1: 2CE0B2DB34D76ED3F697CE148CB7594432405E23">Windows 7 With SP1 64位简体中文旗舰版</a></p>
+                                <p><a href="ed2k://|file|zh-hans_windows_xp_professional_with_service_pack_3_x86_cd_vl_x14-74070.iso|630237184|EC51916C9D9B8B931195EE0D6EE9B40E|/" alt="sha1" title="SHA1：d142469d0c3953d8e4a6a490a58052ef52837f0f">Windows XP with SP3 32位简体中文专业版</a></p>
+                                <p><a href="ed2k://|file|en_win_xp_pro_x64_with_sp2_vl_X13-41611.iso|628168704|5573EEA1F40FE32E46F4615B6A4E71D8|/" alt="sha1" title="SHA1：cd9479e1dbad7f26b8bdcf97e4aa71cbb8de932b">Windows XP with SP2 64位英文专业版</a></p>
+                                <p><a href="http://download.microsoft.com/download/f/d/a/fdac56ee-928a-4d51-9d6d-c7c64e9f5bae/ARMMUIx3.iso">XP SP2 64位韩语、简/繁体中文语言包</a></p>
+                                <p>linux类系统下载（<a href="http://cn.ubuntu.com/download" target="_blank" title="ubuntu官网">ubuntu</a>、<a href="https://www.kali.org/downloads/" target="_blank" title="kali官网">kali</a>、<a href="http://www.deepin.org/download.html" target="_blank" title="deepin官网">deepin</a>、<a href="http://www.phoenixos.com/download_x86" target="_blank" title="凤凰os官网">phoenixos</a>)</p>
+						       </div>
+                            
+                            <div class="soft">
+                                <p><a href="ed2k://|file|cn_office_professional_plus_2016_x86_x64_dvd_6969182.iso|2588266496|27EEA4FE4BB13CD0ECCDFC24167F9E01|/" alt="sha1" title="SHA1：277926A41B472EE38CA0B36ED8F2696356DCC98F">Microsoft Office 2016 32和64位专业增强版</a></p>
+                                <p><a href="ed2k://|file|cn_office_professional_plus_2013_with_sp1_x86_dvd_3921919.iso|858245120|EA50FF2DE78488DF2646D66FA791164A|/" alt="sha1" title="SHA1：B34D6B805649A5C4ED35568D1A7F7A8496819FCD">Microsoft Office 2013 32位专业增强版</a></p>
+                                <p><a href="ed2k://|file|cn_office_professional_plus_2013_with_sp1_x64_dvd_3921920.iso|980258816|E18C9CF896D65B2778AA1A44C922C377|/" alt="sha1" title="SHA1：5BC5AE6B03876E634FA6396749C59164C7767F9F">Microsoft Office 2013 64位专业增强版</a></p>
+                                <p><a href="/download/adobe cc.exe" title="官方工具用于下载最新adobe CC各种系列">Adobe CC系列 官方工具包</a></p>
+                                <p><a href="http://dlsw.baidu.com/sw-search-sp/soft/ed/23674/AdobephotoshopCS5.3965557328.zip">Photoshop CS5 简体中文版</a></p>
+                                <p><a href="http://dlsw.baidu.com/sw-search-sp/soft/6c/23675/Photoshop_CS6.3510481888.7z">Photoshop CS6 简体中文版</a></p>
+                                <p><a href="http://dlsw.baidu.com/sw-search-sp/soft/28/23649/autocad2012.3995616065.zip">AutoCAD 2014 32位 简体中文版</a></p>
+                                <p><a href="http://dlsw.baidu.com/sw-search-sp/soft/90/20858/AutoCAD_2014_Simplified_Chinese_Win_64bit.614833577.exe">AutoCAD 2014 64位 简体中文版</a></p>
+                                <p><a href="http://www.autodesk.com.cn/products/autocad/free-trial#"  target="_blank" title="直接转到官网下载吧">AutoCAD 2016 简体中文版</a></p>
+                                <p><a href="http://yun.baidu.com/s/1sj1KPBn#path=%252Fwindows%25E8%25BD%25AF%25E4%25BB%25B6%25E4%25B8%258E%25E5%25B7%25A5%25E5%2585%25B7%25EF%25BC%2588%25E4%25B8%258D%25E5%25AE%259A%25E6%2597%25B6%25E6%259B%25B4%25E6%2596%25B0%25EF%25BC%2589%252Fwindows%25E5%25B0%258F%25E4%25B8%259C%25E8%25A5%25BF" target="_blank" title="EasyRecovery、U盘格式工具、IE11、环境组件等等">windows的小软件等</a></p>
+                                <p><a href="/download/windows系统安装教程.docx"><font color="red">windows系统安装教程</font></a></p>
+                            </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+                
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight1">
+							
+							恢复网络设置<br/><br/>命令提示符：<br/>netsh winsock reset
 
-<tbody><tr>
-  <td width="125"><a href="http://proquest.safaribooksonline.com/book/databases/content-management-systems/9781449345037"><img src="index_files/cat_003.gif" alt="Git 2nd edition" height="163" width="125"></a>
-  </td>
-  <td align="center" width="330">
-    <p><a href="http://shop.oreilly.com/product/0636920022862.do">Version Control with Git<br>2nd Edition</a><br>Authors: Jon Loelinger and Matthew McCullough</p>
-    <p>Complete reference on Git. Covers almost anything you want to know about using Git.<br></p>
-  </td>
-  <td align="left" width="275"><p>O'Reilly Media, Inc.<br>2nd Edition (August 20, 2012)<br><br>
-    <strong>ISBN-13: </strong>978-1-4493-1638-9</p>
-    <p>Free On-Campus (Safari Books): <a href="http://proquest.safaribooksonline.com/book/databases/content-management-systems/9781449345037">HERE</a><br></p>
-  </td>
-</tr>
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight1">
+						
+							检修系统文件<br/><br/>命令提示符：<br/>sfc /scannow
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight1">
+							
+							查询系统IP<br/><br/>命令提示符：<br/>ipconfig<br/>ipconfig /all
+						</div>
+					</div>
+				</div>
+				<div class="col-1-4">
+					<div class="wrap-col">
+						<div class="box maxheight1">
+						
+							查看电池损耗<br/><br/>命令提示符：<br/>powercfg /BatteryReport
+						</div>
+					</div>
+				</div>
+		</div>
+		</div>
+        
+		<div id="page4" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<h3>自由，寻心而动！！！</h3><br/><h4>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;——世界，因自己美好而美好smile</h4>
+					</div>
+				</div>
+				<div class="companies">
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="zz">
+                            <p>官方笔记本驱动下载地址</p>
+                            <a href="http://www.asus.com.cn/support/" target="_blank">华硕笔记本官方地址</a><br/>
+                            <a href="http://support1.lenovo.com.cn/lenovo/wsi/Modules/NewDriverdown.aspx" target="_blank">联想笔记本官方地址</a><br/>
+                            <a href="http://www.acer.com.cn/ac/zh/CN/content/drivers" target="_blank">宏碁笔记本官方地址</a><br/>
+                            <a href="http://www.dell.com/support/home/cn/zh/cndhs1/Products/laptop" target="_blank">戴尔笔记本官方地址</a><br/>
+                            <a href="http://www.samsung.com/cn/support/category/pcperipheralsprinter/notebooknetbook/" target="_blank">三星笔记本官方地址</a><br/>
+                            <a href="http://service.sony.com.cn/vaio/index.htm" target="_blank">索尼笔记本官方地址</a><br/>
+                            <a href="http://pc.toshiba.com.cn/service/drivers/" target="_blank">东芝笔记本官方地址</a><br/>
+                            <a href="http://www.hasee.com/Chinese/download/computer.aspx" target="_blank">神舟笔记本官方地址</a><br/>
+                            <a href="https://support.apple.com/zh_CN/downloads/BootCamp" target="_blank">苹果类电脑官方地址</a>
+                            </div>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="zz">
+                            <p>限交流使用，请支持正版</p>
+                            <a href="/download/Windows7激活工具.zip">windows 7激活工具</a><br/>
+                            <a href="/download/windows8.1激活工具.exe">windows 8.1激活工具</a><br/>
+                            <a href="/download/Microsoft Toolkit2.6.1.exe">windows office破解补丁</a><br/>
+                            <a href="/download/adobe CC通用破解补丁.exe">adobe cc通用破解补丁</a><br/>
+                            <a href="/download/adobe cs6通用破解补丁.zip">adobe cs6通用破解补丁</a><br/>
+                            <a href="/download/AutoCAD2012破解方法及注册机.zip">autocad 2012破解补丁</a><br/>
+                            <a href="/download/AutoCAD2014破解方法及注册机.zip">autocad 2014破解补丁</a><br/>
+                            <a href="/download/AutoCAD2016破解方法及注册机.rar">autocad 2016破解补丁</a><br/>
+                            </div>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="zz">
+                            <p>环境组件</p>
+                            <a href="http://download.microsoft.com/download/8/4/A/84A35BF1-DAFE-4AE8-82AF-AD2AE20B6B14/directx_Jun2010_redist.exe">DirectX 9</a><br/>
+                            <a style="cursor:pointer" onclick="jQuery('.tc1').show()" class="show">Microsoft Visual C++下载</a><br/>
+                            <a style="cursor:pointer" onclick="jQuery('.tc2').show()" class="show">.NET Framework下载</a><br/>
+                            <a href="/download/32位ipx&spx协议.zip">32位ipx&spx协议</a>
+                            <a href="/download/64位ipx&spx协议.zip">64位ipx&spx协议</a>
+                            </div>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="zz">
+                            <p>windows系统基本优化</p>
+                            <a>想想表示写了用处不大</a><br/>
+                            <a>治标不治本的样子，那就</a><br/>
+                            <a>一句话：换固态硬盘</a><br/>
+                            <a>家里06年的台式机</a><br/>
+                            <a>换了SSD依然不错</a><br/>
+                            </div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="zz">
+                            <p>个人PC类软件推荐</p>
+                            <a href="http://bing.msn.cn/pinyin/"  target="_blank" title="最好用输入法没有之一">微软必应输入法</a><br/>
+                            <a href="http://www.7-zip.org/" title="高压缩比的免费开源软件" target="_blank">7-zip</a><br/>
+                            <a href="http://rainmeter.cn/cms/" title="桌面美化神器啊，教程问度娘" target="_blank">Rainmeter</a><br/>
+                            <a href="http://www.truelaunchbar.com/download.html" title="任务栏美化神器，教程问度娘" target="_blank">truelaunchbar</a><br/>
+                            <a href="/download/EasyRecovery11.0.2.0.zip" title="数据恢复软件">EasyRecovery</a><br/>
+                            <a href="/download/OfficeMix.Setup.exe" title="PPT插件用于录制等功能">OfficeMix</a><br/>
+                            <a href="/download/Windows Installer CleanUp Utility.exe" title="微软出的用于彻底清理软件的">Installer CleanUp Utility</a><br/>
+                            <a href="/download/win7开机动画.zip" title="有不少呢，科幻，萌都有哈">个人收藏win7开机动画</a><br/>
+                            </div>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="zz">
+                            <p>手机类别的推荐</p>
+                            <a href="/download/手机推荐.png" target="_blank">手机推荐</a><br/>
+                            <a style="cursor:pointer" onclick="jQuery('.tc3').show()" class="show">ios越狱文件目录</a><br/>
+                            <a style="cursor:pointer" onclick="jQuery('.tc4').show()" class="show">ios越狱插件推荐</a><br/>
+                            <a>安卓有几年没研究了</a><br/>
+                            <a>以后再说吧</a><br/>
+                            </div>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="zz">
+                            <p>一些选配方法建议</p>
+                            <a href="/download/CPU天梯图.png" target="_blank">CPU天梯图</a><br/>
+                            <a href="/download/笔记本GPU天梯图.png" target="_blank">GPU笔记本天梯图</a><br/>
+                            <a>电脑嘛，第一看自己需求</a><br/>
+                            <a>要求不突出的建议surface</a><br/>
+                            <a>不然买完笔记本会想买ipad</a><br/>
+                            <a>手机这东西，大多数人</a><br/>
+                            <a>妹子就选iphone吧</a><br/>
+                            <a>汉子嘛，愿意折腾就安卓吧</a><br/>
+                            <a>不愿意就iphone或wp吧</a><br/>
+                            <a>少数人（比如我）看自己了</a><br/>
+                            </div>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="zz">
+                            <p>还没想好</p>
+                            <a>写好了我再加上</a><br/>
+                            </div>
+						</div>
+					</div>
+				</div>
+			</div>
+         </div>
+         
+		<div id="page5" class="content">
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+						<div class="slogan">
+							<h3>愿飞云巅</h3>
+							<div class="me">
+								啊，那个，没啥目的，我又不是大触，就想助人为乐而已，求各路大神表来挑刺，良辰必有重谢 (。・`ω´・)
+                                <p></p>
+                                网站才开始做，还啥都不会，功能少，慢慢加，一直没想好做成博客式的，还是个人版面式的，姑且先这样了。
+                                <p></p>
+                                嗯，那个，作为理科生，我还是蛮喜欢琴棋书画，咋地？_(:з」∠)_
+                                <p></p>
+                                不知道有多少兴趣一块的朋友，反正我喜欢捣腾，只捣腾喜欢的，再来一句： ( ＿ ＿)ノ｜扶墙
+                                <p></p>
+                                男人就要夸下海口，这样才能强迫自己完成不可能完成的事( ￣︿￣)
 
-<tr>
-  <td width="125"><a href="http://proquest.safaribooksonline.com/book/programming/c/9781449335649"><img src="index_files/cat.gif" alt="Head First C" height="163" width="125"></a>
-  </td>
-  <td align="center" width="330">
-    <p><a href="http://shop.oreilly.com/product/0636920015482.do">Head First C<br>1st Edition</a><br>Authors: David Griffiths and Dawn Griffiths</p>
-    <p><em>Head First C</em> provides a complete learning experience for C and structured imperative programming.<br></p>
-  </td>
-  <td align="left" width="275"><p>O'Reilly Media, Inc.<br>1st Edition (April 2012)<br><br>
-    <strong>ISBN-13: </strong>978-1-4493-9991-7</p>
-    <p>Free On-Campus (Safari Books): <a href="http://proquest.safaribooksonline.com/book/programming/c/9781449335649">HERE</a><br></p>
-  </td>
-</tr>
-
-<tr>
-  <td width="125"><a href="http://proquest.safaribooksonline.com/book/programming/c/9781491904428"><img src="index_files/cat_002.gif" alt="21st Century C" height="163" width="125"></a>
-  </td>
-  <td align="center" width="330">
-    <p><a href="http://shop.oreilly.com/product/0636920033677.do">21st Century C<br>2nd Edition</a><br>Authors: Ben Klemens</p>
-    <p>With this revised edition of <em>21st Century C</em>, you’ll 
-discover up-to-date techniques missing from other C tutorials, whether 
-you’re new to the language or just getting reacquainted.<br></p>
-  </td>
-  <td align="left" width="275"><p>O'Reilly Media, Inc.<br>2nd Edition (September 2014)<br><br>
-    <strong>ISBN-13: </strong>978-1-4919-0389-6</p>
-    <p>Free On-Campus (Safari Books): <a href="http://proquest.safaribooksonline.com/book/programming/c/9781491904428">HERE</a><br></p>
-  </td>
-</tr>
-
-</tbody></table>
--->
-    </div>
-</div>
-
-</div>
-
-</body></html>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+				<div class="map">
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="bt">AV8D gogogo</div>
+                            <p></p>
+							<address>
+								<dl>
+									<dt>小晨晨的公司<br>
+									蝶舞﹡天空之境<br>
+									看到二维码没有<br>
+                                    多谢大家捐赠了！！！
+									</dt>
+									<dd><span>主力电脑</span>surface pro 3</dd>
+									<dd><span>主力手机</span>iphone4s</dd>
+                                    <dd>有什么意见，建议，想法等等的，尽管微博我吧！来者不拒哈</dd>
+								</dl>
+							</address>
+						</div>
+					</div>
+					<div class="col-1-4">
+						<div class="wrap-col">
+							<div class="wb">
+                            <img src="images/zfb.JPG" height="270px" alt=""/> </div>
+							
+						</div>
+					</div>
+					<div class="col-2-4">
+						<div class="wrap-col">
+                        <div class="gif">
+						<img src="http://ww4.sinaimg.cn/large/bb35e903gw1ex96gey85qg2079043dv5.gif" width="100%" alt=""/>
+                            
+                            <p></p><p></p></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+<!--==============================footer=================================-->
+		<footer>
+			<div class="zerogrid">
+				<div class="col-full">
+					<div class="wrap-col">
+                    带了这么多年的尾戒，有谁愿为我摘下
+						<div class="icp">
+                            <a href="http://www.miitbeian.gov.cn" title="可以戳我查询备案信息">苏ICP备15050951</a>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</footer>
+	</body>
+</html>
